@@ -22,7 +22,9 @@ namespace PrimerParcial.Entidades
             Retencion = retencion;
         }
 
-       
+        public Vendedores()
+        {
+        }
     }
 
   

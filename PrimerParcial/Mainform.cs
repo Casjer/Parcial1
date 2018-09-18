@@ -9,11 +9,18 @@ using System.Windows.Forms;
 
 namespace PrimerParcial
 {
-    public partial class Form1 : Form
+    public partial class Mainform : Form
     {
-        public Form1()
+        public Mainform()
         {
             InitializeComponent();
+        }
+
+
+        private void registroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UI.Registro.Registro rA = new UI.Registro.Registro();
+            rA.Show();
         }
     }
 }
