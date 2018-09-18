@@ -126,7 +126,7 @@ namespace PrimerParcial.UI.Registro
         {
             if(RetencionnumericUpDown.Value != 0 && SueldonumericUpDow.Value !=0)
             {
-                PorcientoRetenciontextBox = Convert.ToDecimal(RetencionnumericUpDown.Value / SueldonumericUpDow.Value *  100);
+                PorcientoRetenciontextBox = Convert.ToString(RetencionnumericUpDown.Value / SueldonumericUpDow.Value *  100);
             }
         }
     }
