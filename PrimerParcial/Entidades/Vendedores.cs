@@ -10,19 +10,21 @@ namespace PrimerParcial.Entidades
     {
         [Key]
         public int VendedroresId { get; set; }
-        public string Nombre { get; set; }
+        public string Nombres { get; set; }
         public decimal Sueldo { get; set; }
-        public decimal Retencion { get; set; }
+        public decimal PorcentajeRentencion { get; set; }
+        public string Retencion { get; set; }
+        public DateTime Fecha { get; set; }
 
-        public Vendedores(int vendedroresId, string nombre, decimal sueldo, decimal retencion)
+        public Vendedores()
         {
-            VendedroresId = vendedroresId;
-            Nombre = nombre;
-            Sueldo = sueldo;
-            Retencion = retencion;
+            VendedroresId = 0;
+            Nombres = string.Empty;
+            Sueldo = 0;
+            PorcentajeRentencion = 0;
+            Retencion = string.Empty;
+            Fecha = DateTime.Now;
         }
-
-       
     }
 
   

@@ -1,21 +1,16 @@
-﻿
-using PrimerParcial.DAL;
+﻿using PrimerParcial.DAL;
 using PrimerParcial.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.Core.Common.CommandTrees;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Runtime.Remoting.Contexts;
 using System.Text;
 
 namespace PrimerParcial.BLL
 {
-    public class VendedoresBll
+   public class VendedoresBLL
     {
-        public static object Vendedores { get; private set; }
-
         public static bool Guardar(Vendedores vendedor)
         {
             bool paso = false;
@@ -37,21 +32,20 @@ namespace PrimerParcial.BLL
             return paso;
         }
 
-        public static bool Modificar (Vendedores Vendedor)
+        public static bool Modificar(Vendedores vendedor)
         {
             bool paso = false;
             Contexto contexto = new Contexto();
-
             try
             {
-                contexto.Entry(Vendedor).State = EntityState.Modified;
-                if(contexto.SaveChanges()>0)
+                contexto.Entry(vendedor).State = EntityState.Modified;
+                if (contexto.SaveChanges() > 0)
                 {
                     paso = true;
                 }
                 contexto.Dispose();
             }
-            catch(Exception)
+            catch (Exception)
             {
                 throw;
             }
@@ -83,13 +77,13 @@ namespace PrimerParcial.BLL
             return paso;
         }
 
-        public static Vendedores  Buscar(int id)
+        public static Vendedores Buscar(int id)
         {
             Contexto contexto = new Contexto();
             Vendedores vendedor = new Vendedores();
             try
             {
-               Vendedores  = contexto.Vendedores.Find(id);
+                vendedor = contexto.Vendedores.Find(id);
                 contexto.Dispose();
             }
             catch (Exception)
@@ -100,13 +94,14 @@ namespace PrimerParcial.BLL
             return vendedor;
         }
 
-        public static List<Vendedores> GetList(Expression<Func<Vendedores, bool>> expression )
+
+        public static List<Vendedores> GetList(Expression<Func<Vendedores, bool>> expression)
         {
-            List<Vendedores> vendedores = new List<Vendedores>();
+            List<Vendedores> vendedor = new List<Vendedores>();
             Contexto contexto = new Contexto();
             try
             {
-               Vendedores = contexto.Vendedores.Where(expression).ToList();
+                vendedor = contexto.Vendedores.Where(expression).ToList();
                 contexto.Dispose();
             }
             catch (Exception)
@@ -115,9 +110,7 @@ namespace PrimerParcial.BLL
                 throw;
             }
 
-            return vendedores;
+            return vendedor;
         }
-       
-    }      
-
+    }
 }

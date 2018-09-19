@@ -8,7 +8,7 @@ using System.Text;
 
 namespace PrimerParcial.DAL
 {
-    class Contexto : DbContext
+    public class Contexto : DbContext
     {
         public DbSet<Vendedores> Vendedores { get; set; }
         public Contexto() : base("constr")
